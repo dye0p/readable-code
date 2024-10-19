@@ -1,6 +1,6 @@
 package cleancode.minesweeper.tobe;
 
-import cleancode.minesweeper.tobe.cell.Cell2;
+import cleancode.minesweeper.tobe.cell.Cell;
 import cleancode.minesweeper.tobe.cell.EmptyCell;
 import cleancode.minesweeper.tobe.cell.LandMineCell;
 import cleancode.minesweeper.tobe.cell.NumberCell;
@@ -10,36 +10,36 @@ import java.util.Random;
 
 public class GameBoard {
 
-    private final Cell2[][] board;
+    private final Cell[][] board;
     private final int landMineCount;
 
     public GameBoard(GameLevel gameLevel) {
         int lowSize = gameLevel.getLowSize();
         int colSize = gameLevel.getColSize();
-        board = new Cell2[lowSize][colSize];
+        board = new Cell[lowSize][colSize];
 
         landMineCount = gameLevel.getLandMineCount();
     }
 
     public void flag(int selectedRowIndex, int selectedColIndex) {
-        Cell2 cell = findCell(selectedRowIndex, selectedColIndex);
+        Cell cell = findCell(selectedRowIndex, selectedColIndex);
         cell.flag();
     }
 
     public void open(int rowIndex, int colIndex) {
-        Cell2 cell = findCell(rowIndex, colIndex);
+        Cell cell = findCell(rowIndex, colIndex);
         cell.open();
     }
 
     public boolean isLandMineCell(int selectedRowIndex, int selectedColIndex) {
-        Cell2 cell = findCell(selectedRowIndex, selectedColIndex);
+        Cell cell = findCell(selectedRowIndex, selectedColIndex);
         return cell.isLandMine();
     }
 
     public boolean isAllCellChecked() {
         return Arrays.stream(board)
                 .flatMap(Arrays::stream)
-                .allMatch(Cell2::isChecked);
+                .allMatch(Cell::isChecked);
     }
 
     public void initializeGame() {
@@ -74,11 +74,11 @@ public class GameBoard {
     }
 
     public String getSign(int rowIndex, int colIndex) {
-        Cell2 cell = findCell(rowIndex, colIndex);
+        Cell cell = findCell(rowIndex, colIndex);
         return cell.getSign();
     }
 
-    private Cell2 findCell(int rowIndex, int colIndex) {
+    private Cell findCell(int rowIndex, int colIndex) {
         return board[rowIndex][colIndex];
     }
 
