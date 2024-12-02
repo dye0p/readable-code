@@ -1,18 +1,18 @@
 package cleancode.minesweeper.tobe;
 
-import cleancode.minesweeper.position.CellPosition;
-import cleancode.minesweeper.position.CellPositions;
-import cleancode.minesweeper.position.RelativePosition;
 import cleancode.minesweeper.tobe.cell.Cell;
 import cleancode.minesweeper.tobe.cell.Cells;
 import cleancode.minesweeper.tobe.cell.EmptyCell;
 import cleancode.minesweeper.tobe.cell.LandMineCell;
 import cleancode.minesweeper.tobe.cell.NumberCell;
 import cleancode.minesweeper.tobe.gamelevel.GameLevel;
+import cleancode.minesweeper.tobe.position.CellPosition;
+import cleancode.minesweeper.tobe.position.CellPositions;
+import cleancode.minesweeper.tobe.position.RelativePosition;
 import java.util.List;
 
 public class GameBoard {
-    
+
     private final Cell[][] board;
     private final int landMineCount;
 

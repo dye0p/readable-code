@@ -1,8 +1,8 @@
 package cleancode.minesweeper.tobe.io;
 
-import cleancode.minesweeper.position.CellPosition;
 import cleancode.minesweeper.tobe.GameBoard;
 import cleancode.minesweeper.tobe.GameException;
+import cleancode.minesweeper.tobe.position.CellPosition;
 import java.util.List;
 import java.util.stream.IntStream;
 

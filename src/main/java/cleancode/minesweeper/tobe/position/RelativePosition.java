@@ -1,10 +1,10 @@
-package cleancode.minesweeper.position;
+package cleancode.minesweeper.tobe.position;
 
 import java.util.List;
 import java.util.Objects;
 
 public class RelativePosition {
-    
+
     public static final List<RelativePosition> SURROUNDED_POSITIONS = List.of(
             RelativePosition.of(-1, -1),
             RelativePosition.of(-1, 0),
